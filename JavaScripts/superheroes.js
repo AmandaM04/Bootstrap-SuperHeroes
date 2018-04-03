@@ -7,14 +7,17 @@ const buildDomString = (heroesArray) => {
     // console.log("heroesArray", heroesArray);
     let domString = '';
     heroesArray.forEach((hero) => {
-    //   domString += `<h3>${hero.name}</h3>`;
       domString += `<div class="col-sm-3">`;
       domString += `<div class="panel">`;
       domString +=   `<div class="panel-heading">`;
       domString +=      `<h3 class="panel-title">${hero.name}</h3>`;
       domString +=   `</div>`;
       domString +=   `<div class="panel-body">`;
-      domString +=      `<img class="charImage" src="${hero.image}">`;
+        if(hero.gender === "Male"){
+            domString +=      `<img class="charImage male" src="${hero.image}">`;   
+        } else {
+            domString +=      `<img class="charImage female" src="${hero.image}">`;
+        }
       domString +=      `<p class="charDescription">${hero.description}</p>`;
       domString +=   `</div>`;
       domString += `</div>`;
